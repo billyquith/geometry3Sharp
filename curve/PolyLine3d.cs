@@ -62,8 +62,13 @@ namespace g3
 			Timestamp++; 
 		}
 
+        public void AppendVertices(IEnumerable<Vector3d> v) 
+        {
+            vertices.AddRange(v);
+            Timestamp++;
+        }
 
-		public Vector3d GetTangent(int i)
+        public Vector3d GetTangent(int i)
 		{
 			if (i == 0)
 				return (vertices[1] - vertices[0]).Normalized;
